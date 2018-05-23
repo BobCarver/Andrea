@@ -7,3 +7,4 @@ https://developers.google.com/maps/documentation/
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 4) add an api call to price the delivery.
 5) add an api call to get paid https://www.smashingmagazine.com/2018/01/online-purchase-payment-request-api/
+6) $$$
