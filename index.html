@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delivery App</title>
+</head>
+<!-- 1) Include to and from addresses as well as name, address, phone, e-mail etc. -->
+<body>
+
+<h2>Sender Information</h2>
+<form>
+
+<label>Name:</label><br>
+    <input type="text">
+<p>
+<label>Email Address:</label><br>
+    <input type="email">
+</p>
+<p>
+<label>Phone Number:</label><br>
+    <input type="tel">
+</p>
+<p>
+<label>Cell Phone Number:</label><br>
+    <input type="tel">
+</p>
+<p>
+<label>Street Address:</label>
+<br>
+    <input type="text" id="street1">
+</p>
+<p>
+<label>City: </label>
+<br>
+    <input type="text" id="city1">
+</p>
+<p>
+<label> State:</label>
+<br>
+    <input type="text" id="state1">
+</p>
+<p>
+<label>Zipcode:</label><br>
+    <input type="text" id="zip1">
+</p>
+
+<p>
+<h2>Recipient Information</h2>
+</p>
+<label>Name:</label><br>
+    <input type="text">
+<p>
+    <label>Street Address:</label>
+<br>
+    <input type="text">
+</p>
+<p>
+    <label>City: </label>
+<br>
+    <input type="text">
+</p>
+<p>
+<label> State:</label>
+<br>
+    <input type="text">
+</p>
+<p>
+<label>Zipcode:</label><br>
+    <input type="text">
+</p>
+<p><input type="submit"></p>
+
+</form>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  function codeAddress(street, city, state, zip) {
+    const address = `${street} ${city} ${state} ${zip}`
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        console.log(results[0].geometry.location);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }   
+
+codeAddress($("#street1"), $("#city1"), $("#state1"), $("#zip1"));
+
+codeAddress($("#street2"), $("#city2"), $("#state2"), $("#zip2"));
+
+var rname = $("#street1").val().trim()
+
+
+var name1 = localStorage.getItem("name")
+var street1 = localStorage.getItem("streetAddress")
+var city1 = localStorage.getItem("city")
+var state1 = localStorage.getItem("state")
+
+</script>
+    
+</body>
+</html>
