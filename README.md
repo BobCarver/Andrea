@@ -9,3 +9,4 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 4) add an api call to price the delivery.
 5) add an api call to get paid https://www.smashingmagazine.com/2018/01/online-purchase-payment-request-api/
+6) $$$
